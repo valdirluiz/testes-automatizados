@@ -15,14 +15,14 @@ import br.com.caelum.leilao.dominio.Lance;
 import br.com.caelum.leilao.dominio.Leilao;
 import br.com.caelum.leilao.dominio.Usuario;
 
-public class LeilaoDao {
+public class LeilaoDao implements RepositorioDeLeiloes{
 
 	private Connection conexao;
 
 	public LeilaoDao() {
 		try {
 			this.conexao = DriverManager.getConnection(
-					"jdbc:mysql://localhost/mocks", "root", "");
+					"jdbc:mysql://localhost/mocks", "root", "281535poin");
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
