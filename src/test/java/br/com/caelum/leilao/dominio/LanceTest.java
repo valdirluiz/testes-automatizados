@@ -1,5 +1,8 @@
 package br.com.caelum.leilao.dominio;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -24,7 +27,9 @@ public class LanceTest {
 
 	@Test
 	public void deveAceitarValoresMaioresQueZeroComoLance() {
-		new Lance(usuario, 0.001);
+		Lance lance = new Lance(usuario, 0.001);
+		assertThat(lance.getValor(), is(0.001));
+		
 	}
 
 }
