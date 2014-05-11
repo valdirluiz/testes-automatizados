@@ -39,10 +39,9 @@ public class AvaliadorTeste {
         .constroi();
 
 		leiloeiro.avalia(leilao);
-
-		assertEquals(2500, leiloeiro.getMaiorLance(), 0.0);
-		assertEquals(100, leiloeiro.getMenorLance(), 0.0);
-
+		
+		assertThat(leiloeiro.getMaiorLance(), is(2500.0));
+		assertThat(leiloeiro.getMenorLance(), is(100.0));
 	}
 
 	@Test
@@ -54,10 +53,9 @@ public class AvaliadorTeste {
         .constroi();
 
 		leiloeiro.avalia(leilao);
-
-		assertEquals(400, leiloeiro.getMaiorLance(), 0.0);
-		assertEquals(250, leiloeiro.getMenorLance(), 0.0);
-
+		
+		assertThat(leiloeiro.getMaiorLance(), is(400.0));
+		assertThat(leiloeiro.getMenorLance(), is(250.0));
 	}
 	
 	@Test
@@ -71,8 +69,8 @@ public class AvaliadorTeste {
 
 		leiloeiro.avalia(leilao);
 		
-	    assertThat(leiloeiro.getMenorLance(), equalTo(100.0));
-	    assertThat(leiloeiro.getMaiorLance(), equalTo(400.0));
+	    assertThat(leiloeiro.getMenorLance(), is(100.0));
+	    assertThat(leiloeiro.getMaiorLance(), is(400.0));
 
 	}
 	
@@ -85,7 +83,7 @@ public class AvaliadorTeste {
         .constroi();
 
 		leiloeiro.avalia(leilao);
-		assertEquals(316.666666667, leiloeiro.getValorMedioDosLances(), 0.0001);
+		assertEquals(316.666666667, leiloeiro.getValorMedioDosLances(), 0.00001);
 
 	}
 	
@@ -110,9 +108,9 @@ public class AvaliadorTeste {
 	
 		leiloeiro.avalia(leilao);
 		
-		assertEquals(1000, leiloeiro.getMaiorLance(),0.0001);
-		assertEquals(1000, leiloeiro.getMenorLance(),0.0001);
-		assertEquals(1000, leiloeiro.getValorMedioDosLances(),0.0001);
+		assertThat(leiloeiro.getMaiorLance(), is(1000.0));
+		assertThat(leiloeiro.getMenorLance(), is(1000.0));
+		assertThat(leiloeiro.getValorMedioDosLances(), is(1000.0));
 	}
 	
 	@Test

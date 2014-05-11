@@ -28,10 +28,12 @@ public class LeilaoTest {
 		
 		assertThat(leilao.getLances().size(), equalTo(0));
 		
-		leilao.propoe(new Lance(new Usuario("Steve Jobs"), 3000));
+		leilao.propoe(new Lance(steveJobs, 3000));
 
 		assertThat(leilao.getLances().size(), equalTo(1));
-		assertThat(leilao.getLances().get(0).getValor(), is(3000.0));
+		assertThat(leilao.getLances(), hasItem(
+				new Lance(steveJobs, 3000.0)
+		));
 	}
 
 	@Test
